@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Falling GIFs using Tenor embed -->
+            <div class="gif" style="top: 10%; left: 20%;">
+                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="gif" style="top: 6%; left: 88%;">
+                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="gif" style="top: 60%; left: 70%;">
+                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="gif" style="top: 40%; left: 80%;">
+                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="gif" style="top: 80%; left: 10%;">
+                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <div>
+                <h1 class="header_text">Will you be my Valentine?</h1>
+                <h1 class="header_text">Pretty please bebe?</h1>
+            </div>
+            <div class="gif_container">
+                <iframe src="https://tenor.com/embed/18147022" width="300" height="300" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="buttons">
+                <button class="btn" id="yesbutton" onclick="nextpage()">Yes</button>
+                <button class="btn" id="nobutton" onclick="moveButton()">No</button>
+            </div>
+        </div>
+
+        <script>
+            function nextpage() {
+                window.location.href = "yes.html";
+            }
+
+            function moveButton() {
+                var button = document.getElementById('nobutton');
+                var x = Math.random() * (window.innerWidth - button.offsetWidth) - 85;
+                var y = Math.random() * (window.innerHeight - button.offsetHeight) - 48;
+
+                button.style.position = "absolute"; // Ensures the button moves
+                button.style.left = `${x}px`;
+                button.style.top = `${y}px`;
+            }
+        </script>
+    </body>
+</html>

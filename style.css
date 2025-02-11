@@ -1,0 +1,85 @@
+/* Set background color of the whole page to matte pink */
+body {
+    background-color: #ffffff; /* Matte pink color */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Optional: change font */
+    overflow: hidden; /* Hide overflow for falling hearts */
+}
+
+/* Center the entire container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+    position: relative; /* For the falling hearts to be positioned within */
+}
+
+/* Ensure the gif container is centered */
+.gif_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Optional: style for text headers */
+.header_text {
+    color: #f73f8e; /* White text color for contrast */
+    font-size: 2rem; /* Increase font size */
+}
+
+/* Ensure the buttons are side by side with a smaller space between them */
+.buttons {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    align-items: center; /* Center the buttons vertically */
+    width: 300px; /* Adjust width to make the gap smaller */
+    margin-top: 20px;
+}
+
+/* Make the buttons 4x larger */
+.btn {
+    font-size: 2rem; /* Larger text size */
+    padding: 20px 40px; /* Larger padding for the button */
+    margin: 10px; /* Space around each button */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Green color for "Yes" button */
+#yesbutton {
+    background-color: #4CAF50; /* Green color */
+    color: white; /* White text */
+}
+
+/* Red matte color for "No" button */
+#nobutton {
+    background-color: #D32F2F; /* Red color */
+    color: white; /* White text */
+}
+
+/* Positioning for falling GIFs */
+.gif {
+    position: absolute;
+    width: 100px; /* Adjust the size of the GIF */
+    height: 100px;
+    opacity: 0.8;
+    animation: moveGIF 6s infinite ease-in-out;
+}
+
+/* Animation for the random movement of GIFs */
+@keyframes moveGIF {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(30px) scale(1.1);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
