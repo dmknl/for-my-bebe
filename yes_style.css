@@ -3,14 +3,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: rgb(189, 225, 122);
+    background-color: #ffffff(189, 225, 122);
+    flex-direction: column; /* Stack content vertically */
+    text-align: center; /* Center everything inside */
 }
 
 .header_text {
     font-family: 'Nunito';
     font-size: 50px;
     font-weight: bold;
-    color: white;
+    color: #f73f8e;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -20,4 +22,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Style for the 'Click here' button */
+#clickhere {
+    background-color: #4CAF50; /* Green for Yes */
+    color: white;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    margin-top: 20px; /* Space below the GIF */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#clickhere:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+#clickhere:active {
+    background-color: #3e8e41; /* Darker green when clicked */
 }

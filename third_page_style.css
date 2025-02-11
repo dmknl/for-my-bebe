@@ -1,0 +1,39 @@
+/* Ensure the page has a white background */
+body {
+    background-color: white; /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px; /* Add padding around the body to prevent text from touching the edges */
+    box-sizing: border-box;
+}
+
+/* Container for the message */
+.message-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 80%; /* Limits the width to 80% of the screen width */
+    margin-top: 20px;
+    box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
+/* Style for the message text */
+.pink {
+    font-family: 'Nunito', sans-serif;
+    font-size: 28px; /* Increased font size */
+    font-weight: bold;
+    color: #f73f8e; /* Pink color for "Dear Bebe" */
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.black {
+    font-family: 'Nunito', sans-serif;
+    font-size: 28px; /* Increased font size */
+    color: #333; /* Matte black color for the rest of the message */
+    line-height: 1.5;
+    margin-bottom: 15px;
+    word-wrap: break-word; /* Ensures text wraps if it’s too long */
+}

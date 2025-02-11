@@ -1,54 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="container">
-            <!-- Falling GIFs using Tenor embed -->
-            <div class="gif" style="top: 10%; left: 20%;">
-                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="gif" style="top: 6%; left: 88%;">
-                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="gif" style="top: 60%; left: 70%;">
-                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="gif" style="top: 40%; left: 80%;">
-                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="gif" style="top: 80%; left: 10%;">
-                <iframe src="https://tenor.com/embed/21042239" width="100" height="100" frameborder="0" allowfullscreen></iframe>
-            </div>
+  <head>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Styling for both Yes and No buttons */
+      .btn {
+        font-size: 24px; /* Make sure both buttons have the same font size */
+        padding: 20px 40px; /* Make both buttons have the same padding */
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+        border-radius: 5px; /* Optional: gives a rounded corner effect */
+      }
 
-            <div>
-                <h1 class="header_text">Will you be my Valentine?</h1>
-                <h1 class="header_text">Pretty please bebe?</h1>
-            </div>
-            <div class="gif_container">
-                <iframe src="https://tenor.com/embed/18147022" width="300" height="300" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="buttons">
-                <button class="btn" id="yesbutton" onclick="nextpage()">Yes</button>
-                <button class="btn" id="nobutton" onclick="moveButton()">No</button>
-            </div>
-        </div>
+      #yesbutton {
+        background-color: green;
+        color: white;
+      }
 
-        <script>
-            function nextpage() {
-                window.location.href = "yes.html";
-            }
+      #nobutton {
+        background-color: red;
+        color: white;
+      }
 
-            function moveButton() {
-                var button = document.getElementById('nobutton');
-                var x = Math.random() * (window.innerWidth - button.offsetWidth) - 85;
-                var y = Math.random() * (window.innerHeight - button.offsetHeight) - 48;
+      #nobutton:hover {
+        background-color: darkred;
+        transform: translate(10px, 10px);
+      }
 
-                button.style.position = "absolute"; // Ensures the button moves
-                button.style.left = `${x}px`;
-                button.style.top = `${y}px`;
-            }
-        </script>
-    </body>
+      #yesbutton:hover {
+        background-color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gif" style="top: 10%; left: 20%;">
+        <iframe
+          src="https://tenor.com/embed/21042239"
+          width="100"
+          height="100"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="gif" style="top: 6%; left: 88%;">
+        <iframe
+          src="https://tenor.com/embed/21042239"
+          width="100"
+          height="100"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="gif" style="top: 60%; left: 70%;">
+        <iframe
+          src="https://tenor.com/embed/21042239"
+          width="100"
+          height="100"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="gif" style="top: 40%; left: 80%;">
+        <iframe
+          src="https://tenor.com/embed/21042239"
+          width="100"
+          height="100"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="gif" style="top: 80%; left: 10%;">
+        <iframe
+          src="https://tenor.com/embed/21042239"
+          width="100"
+          height="100"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <div>
+        <h1 id="header_text" class="header_text">Will you be my Valentine?</h1>
+        <h1 class="header_text">Pretty please bebe?</h1>
+      </div>
+      <div class="gif_container">
+        <iframe
+          src="https://tenor.com/embed/18147022"
+          width="300"
+          height="300"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div class="buttons">
+        <button class="btn" id="yesbutton" onclick="nextpage()">Yes</button>
+        <button class="btn" id="nobutton" onclick="begging()">No</button>
+      </div>
+    </div>
+
+    <script>
+      let counter = 0;
+      // Customizable messages for the header
+      const messages = [
+        "Pretty please click YES!",
+        "I can't take this anymore 😩",
+        "Just one click, please...",
+        "I’m begging you, please say YES!",
+        "Why are you doing this to me? 😭",
+        "Please just say YES! You’re making me cry 😭",
+      ];
+
+      // Function for when "Yes" button is clicked
+      function nextpage() {
+        window.location.href = "yes.html";
+      }
+
+      // Function for when "No" button is clicked
+      function begging() {
+        const headerText = document.getElementById("header_text");
+        if (counter < messages.length) {
+          headerText.innerHTML = messages[counter]; // Show the message from the array
+          counter++;
+        } else {
+          headerText.innerHTML = "Please say YES, please!";
+        }
+
+        moveButton(); // Keep the moveButton functionality when No is clicked
+      }
+
+      // Function to make the No button move when clicked
+      function moveButton() {
+        var button = document.getElementById("nobutton");
+        var x = Math.random() * (window.innerWidth - button.offsetWidth) - 85;
+        var y = Math.random() * (window.innerHeight - button.offsetHeight) - 48;
+
+        button.style.position = "absolute"; // Ensures the button moves
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+      }
+    </script>
+  </body>
 </html>
