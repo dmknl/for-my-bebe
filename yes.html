@@ -17,7 +17,18 @@
             </div>
         </div>
 
+        <!-- Autoplay Audio -->
+        <audio id="yeySound" autoplay>
+            <source src="audio/cartoon-yay-140921.mp3" type="audio/mp3">
+        </audio>
+
         <script>
+            // Ensures autoplay works on most browsers
+            document.addEventListener("DOMContentLoaded", function () {
+                const audio = document.getElementById("yeySound");
+                audio.play().catch(error => console.log("Autoplay prevented:", error));
+            });
+
             function goToThirdPage() {
                 window.location.href = "third_page.html";  // Redirect to third page
             }
